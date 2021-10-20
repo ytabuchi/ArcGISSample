@@ -95,8 +95,8 @@ namespace ArcGISAndroid
                 return;
             }
             
-            _myMapView.LocationDisplay.IsEnabled = true;
             await _myMapView.LocationDisplay.DataSource.StartAsync();
+            _myMapView.LocationDisplay.IsEnabled = true;
         }
 
         private async void _locationStopButton_Click(object sender, EventArgs e)
