@@ -2,4 +2,6 @@
   <string name="app_name">ArcGISAndroid</string>
   <string name="action_settings">Settings</string>
   <string name="button_goto_display_map_activity">Go to map</string>
+  <string name="button_location_start">Location Start</string>
+  <string name="button_location_stop">Location Stop</string>
 </resources>

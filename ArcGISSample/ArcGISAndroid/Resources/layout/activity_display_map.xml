@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/locationStartButton"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/button_location_start"
+        android:textColor="@android:color/black"
+        android:backgroundTint="@android:color/darker_gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+    <Button
+        android:id="@+id/locationStopButton"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/button_location_stop"
+        android:textColor="@android:color/black"
+        android:backgroundTint="@android:color/darker_gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/locationStartButton"/>
+    <Esri.ArcGISRuntime.UI.Controls.MapView
+        android:id="@+id/myMapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+</RelativeLayout>
