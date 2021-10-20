@@ -1,7 +1,10 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Widget;
 using AndroidX.AppCompat.App;
+using Esri.ArcGISRuntime;
 
 namespace ArcGISAndroid
 {
@@ -14,12 +17,15 @@ namespace ArcGISAndroid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
-        }
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
-        {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            var gotoMapActivityButton = FindViewById<Button>(Resource.Id.goto_display_map_activity_button);
+            gotoMapActivityButton.Click += GotoMapActivityButton_Click;
+        }
+
+        private void GotoMapActivityButton_Click(object sender, System.EventArgs e)
+        {
+            var intent = new Intent(this, typeof(DisplayMapActivity));
+            StartActivity(intent);
         }
     }
 }
