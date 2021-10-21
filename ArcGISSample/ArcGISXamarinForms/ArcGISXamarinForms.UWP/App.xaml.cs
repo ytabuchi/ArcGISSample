@@ -1,7 +1,11 @@
-﻿using System;
+﻿using Esri.ArcGISRuntime;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.Xamarin.Forms;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -56,7 +60,16 @@ namespace ArcGISXamarinForms.UWP
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
-                Xamarin.Forms.Forms.Init(e);
+
+                // Initialize ArgGIS Runtime
+                ArcGISRuntimeEnvironment.Initialize();
+                // Work around of .NET native compilation issue where ArcGIS Runtime assemblies 
+                // gets optimized away by explicitly defining the assemblies that are used. 
+                List<Assembly> assembliesToInclude = new List<Assembly>();
+                assembliesToInclude.Add(typeof(Map).GetTypeInfo().Assembly);
+                assembliesToInclude.Add(typeof(MapView).GetTypeInfo().Assembly);
+
+                Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
