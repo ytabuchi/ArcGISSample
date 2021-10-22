@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage x:Class="ArcGISXamarinForms.Views.MainPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="ArcGIS XF Android">
 
     <StackLayout>
-        <Frame Padding="24"
+        <!--<Frame Padding="24"
                BackgroundColor="#2196F3"
                CornerRadius="0">
             <Label HorizontalTextAlignment="Center"
@@ -27,7 +28,7 @@
                     </FormattedString.Spans>
                 </FormattedString>
             </Label.FormattedText>
-        </Label>
+        </Label>-->
         <Button Clicked="Button_Clicked" Text="Go to map" />
     </StackLayout>
 

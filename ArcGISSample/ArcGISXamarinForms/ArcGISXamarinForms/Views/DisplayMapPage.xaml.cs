@@ -52,8 +52,8 @@ namespace ArcGISXamarinForms.Views
             }
 
             MyMapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
-            await MyMapView.LocationDisplay.DataSource.StartAsync();
             MyMapView.LocationDisplay.IsEnabled = true;
+            await MyMapView.LocationDisplay.DataSource.StartAsync();
         }
 
         /// <summary>
