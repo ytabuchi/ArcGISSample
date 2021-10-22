@@ -28,3 +28,10 @@ SDK リファレンス
 [Supported languages \| ArcGIS Runtime API for \.NET \| ArcGIS Developer](https://developers.arcgis.com/net/reference/supported-languages/)
 
 
+
+## Xamarin.Essentials
+
+Location
+
+https://docs.microsoft.com/ja-jp/xamarin/essentials/geolocation?tabs=android
+
